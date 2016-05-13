@@ -1,0 +1,117 @@
+$icon-font-path: '../fonts/';
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+body {
+    //为了防止hover的时候，右侧出现滚动条导致布局变化的bug，暂时先设置一个body的min-height，当整体布局高度很高的时候需将此设置删除。
+    min-height: 1500px;
+}
+
+div.header_bg_img {
+    background: url(../images/home_blach_bg.jpg) no-repeat fixed center;
+    background-size: cover;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+div.header_logo_container {
+    padding-top: 50px;
+}
+
+div.container {
+    margin: 0 auto;
+    // width: 100%;
+    div.one_fourth,
+    div.three_fourth {
+        float: left;
+    }
+    div.one_fourth {
+        width: 25%;
+    }
+    div.three_fourth {
+        width: 75%;
+    }
+}
+
+ul.um-menu {
+    li.menu-item {
+        position: relative;
+        float: left;
+        list-style: none;
+        cursor: pointer;
+        a {
+            margin-right: 7px;
+            padding: 7px 15px;
+            border-radius: 3px;
+            color: #fff;
+            border: 2px solid transparent;
+        }
+        a:hover {
+            text-decoration: none;
+            border: 2px solid #fff;
+        }
+        ul.submenu {
+            display: none;
+        }
+    }
+    li.menu-item:first-child a {
+        border: 2px solid #fff;
+    }
+    li.menu-item:hover a {
+    	border: 2px solid #fff;
+    }
+}
+
+ul.um-menu li.menu-item:hover {
+    ul.submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 50px 0 0 0;
+        li.menu-item {
+        	position: relative;
+            width: 220px;
+            height: 33px;
+            background: rgba(40, 40, 40, 1) url(../images/pattern_7.png);
+            line-height: 30px;
+            border-radius: 0;
+            border-left: 2px solid #fff;
+            border-bottom: 1px solid rgba(53, 53, 53, 1);
+            border-right: 1px solid rgba(53, 53, 53, 1);
+            a {
+                border: none;
+                padding: 5px 15px;
+            }
+            ul.sub-menu {
+            	display: none;
+            	position: absolute;
+            	left: 176px;
+            	top: 0;
+            	z-index: 100;
+            }
+        }
+        li.menu-item:first-child {
+            border-top: 1px solid rgba(53, 53, 53, 1);
+        }
+        li:menu-item:last-child {
+            background: #fff;
+            // color: #000;
+        }
+        li.menu-item:hover {
+            background: #fff;
+            a {
+                color: #000;
+            }
+            ul.sub-menu {
+            	display: block;
+            	a {
+            		color: #fff;
+            	}
+            	a:hover {
+            		color: #000;
+            	}
+            }
+        }
+    }
+}
